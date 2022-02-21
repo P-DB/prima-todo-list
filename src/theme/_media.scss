@@ -1,0 +1,7 @@
+$tablet-width: 820px;
+
+@mixin laptop {
+  @media (min-width: #{$tablet-width + 1}) {
+    @content;
+  }
+}

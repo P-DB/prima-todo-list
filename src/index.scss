@@ -1,0 +1,21 @@
+@import 'theme/theme';
+
+html,body {
+  background-color: $bgDarker;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $textMain;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

@@ -1,0 +1,46 @@
+@mixin plus-icon {
+    height: 20px;
+    position: relative;
+    width: 20px;
+
+    &:before,
+    &:after {
+      border-radius: 2px;
+      background-color: $textDarker;
+      content:'';
+      display: block;
+      position: absolute;
+    }
+    
+    &:before {
+      height: 2px;
+      left: 0;
+      top: calc(50% - 1px);
+      right: 0;   
+    }
+
+    &:after {
+      bottom:0;
+      left: calc(50% - 1px);
+      top:0;
+      width: 2px;
+    }
+  }
+
+  @mixin fontStyle($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  @mixin circleShape($size) {
+    border-radius: 50%;
+    height: $size;
+    width: $size;
+  }
+
+  @mixin flexCenter {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
