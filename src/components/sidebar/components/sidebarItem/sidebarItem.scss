@@ -1,0 +1,73 @@
+@import 'theme/theme';
+
+.sidebar-item {
+  align-items: center;
+  border-radius: $shapeL;
+  color: $textSidebar;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: $spacingS $spacingM;
+
+  &--selected {
+    color: $textMain;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon {
+    align-items: center;
+    display: flex;
+
+    svg path {
+      fill: $textSidebar
+    }
+  }
+
+  &--selected &__icon svg path {
+    fill: $textMain
+  }
+
+  p {
+    font-size: 8px;
+    font-weight: 500;
+    margin: $spacingXXS 0 0 0;
+  }
+}
+
+@include laptop {
+
+  .sidebar-item {
+    flex: 0;
+    justify-content: space-between;
+    margin-bottom: $spacingXS;
+
+    &:last-child {
+      margin: auto 0 0 0;
+    }
+
+    &--selected {
+      background-color: $bgSelectedItem;
+    }
+
+    &__label {
+      flex-direction: row;
+    }
+
+    &__icon {
+      margin-right: $spacingXS;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+  }
+
+}

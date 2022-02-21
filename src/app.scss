@@ -1,0 +1,17 @@
+@import './theme/theme';
+
+.app {
+  display: flex;
+  background-color: $bgDarker;
+  flex-grow: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@include laptop {
+  .app {
+   flex-direction: row;
+  }
+}
+
+

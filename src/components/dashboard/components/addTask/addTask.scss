@@ -1,0 +1,58 @@
+@import 'theme/theme';
+
+.add-task {
+  align-items: center;
+  background-color: $bgSidebar;
+  border-radius: $shapeL;
+  color: $textSidebar;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: $spacingM;
+
+  input {
+    @include fontStyle($textDarker, 16px, 500);
+    background-color: transparent;
+    border: 0;
+    flex: 1;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: $spacingXXXL;
+    padding: 0;
+    height: auto;
+    text-rendering: optimizeLegibility;
+
+    &::placeholder{
+      @include fontStyle($ctaDisalbed, 16px, 500);
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+
+    &__label {
+      @include fontStyle($textDarker, 12px, 400);
+      display: inline-block;
+      margin-right: $spacingM;
+    }
+  }
+}
+
+@include laptop{
+  .add-task {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    input {
+      margin-bottom: 0;
+    }
+
+    &__switch {
+      margin-right: 60px;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@import "theme/theme";
+
+.modal {
+  border-radius: $shapeL;
+  background-color: $bgSidebar;
+  margin: 100px 35px 0 35px;
+
+  &:focus-visible {
+    outline: 0;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $bgModalOverlay;
+  }
+
+  &__title {
+    align-items: center;
+    border-bottom: 1px solid $bgModalSeparator;
+    display: flex;
+    justify-content: space-between;
+    padding: $spacingM $spacingL;
+
+    h3 {
+      @include fontStyle($textDarker, 15px, 500);
+      margin: 0;
+    }
+
+    &__close {
+      transform: rotate(45deg);
+      @include plus-icon;
+    }
+  }
+
+  &__content {
+    padding: $spacingM $spacingL $spacingL $spacingL;
+  }
+}
+
+.dashboard {
+  align-items: center;
+  display: flex;
+  background-color: $bgMain;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0 $spacingXXL;
+
+  h1 {
+    @include fontStyle($textDarker, 24px, 700);
+    margin: 0 0 $spacingXXXL 0;
+  }
+
+  &__container {
+    margin: $spacingXXXL 0;
+    max-width: 810px;
+    width: 100%;
+  }
+
+  &__CTANewTask {
+    align-items: center;
+    background-color: $bgSidebar;
+    border-radius: $shapeL;
+    color: $textSidebar;
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacingS;
+    padding: $spacingM;
+
+    p {
+      @include fontStyle($textDarker, 16px, 500);
+      margin: 0 $spacingXS 0 0;
+    }
+
+    &__plus {
+      @include plus-icon;
+    }
+  }
+
+  &__new-task {
+    display: none;
+  }
+
+  &__new-task,
+  &__in-progess {
+    margin-bottom: $spacingXXXL;
+  }
+
+  &__title {
+    align-items: center;
+    display: flex;
+    margin-bottom: $spacingXS;
+
+    h4 {
+      @include fontStyle($textDarker, 16px, 500);
+    }
+
+    &__counter {
+      @include flexCenter;
+      @include fontStyle($bgMain, 12px, 500);
+      @include circleShape(20px);
+      background-color: $textDarker;
+      margin-left: $spacingXS;
+    }
+  }
+}
+
+@include laptop {
+  .dashboard {
+    order: 2;
+
+    h1 {
+      display: none;
+    }
+
+    &__CTANewTask {
+      display: none;
+    }
+
+    &__new-task {
+      display: block;
+    }
+  }
+}

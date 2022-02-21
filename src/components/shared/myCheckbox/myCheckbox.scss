@@ -1,0 +1,50 @@
+@import 'theme/theme';
+
+.my-checkbox {
+  border: 1px solid $textDarker; 
+  border-radius: $shapeS;
+  background-color: $bgSidebar;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  transition: background-color .2s ease-out;
+
+  &:before {
+    content: '';
+    display: block;
+    border-bottom: 1px solid $textMain;
+    border-right: 1px solid $textMain;
+    height: 7px;
+    margin-top: $spacingXXS;
+    opacity: 0;
+    width: 5px;
+    transform: rotate(45deg);
+    transition: opacity .2s ease-out;
+  }
+
+  &:hover {
+    &:before {
+      opacity: .2;
+    }
+    cursor: pointer;
+    background-color: $bgSidebarHover;
+  }
+
+  &--checked {
+    background-color: $bgSuccess;
+
+    &:before {
+      opacity: 1;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+      background-color: $bgSuccess;
+    }
+  }
+  
+}

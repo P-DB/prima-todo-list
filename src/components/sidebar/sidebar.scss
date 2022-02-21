@@ -1,0 +1,48 @@
+@import 'theme/theme';
+
+.sidebar {
+  display: flex;
+  background-color: $bgSidebar;
+  overflow: hidden;
+  
+
+  h1 {
+    display: none;
+    font-size: 24;
+    font-weight: 700;
+    margin: 0 0 0 18px;
+  }
+
+  ul {
+    display: flex;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+}
+
+@include laptop {
+  .sidebar {
+    flex-grow: 1;
+    flex-direction: column;
+    max-width: 300px;
+    order: 1;
+    padding: 40px;
+
+    h1 {
+      display: block;
+    }
+
+    ul {
+      flex-direction: column;
+      flex-grow: 1;
+      margin: 100px 0 0 0;
+    }
+
+   }
+}

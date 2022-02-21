@@ -1,0 +1,28 @@
+@import 'theme/theme';
+
+$switchWidth: 60;
+$knobSize: 26;
+$diff: $switchWidth - ($knobSize*2);
+$toggleGap: $diff + px;
+
+.my-switch {
+  background-color: $bgSelectedItem;
+  border-radius: 17px;
+  padding: 3px;
+  width: $switchWidth + px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__knob {
+    background-color: $ctaDisalbed;
+    @include circleShape($knobSize + px);
+    transition: transform .2s ease-out, background-color .2s ease-out;
+
+    &--active {
+      background-color: $textDarker;
+      transform: translateX(calc(100% + #{$toggleGap}));
+    }
+  }
+}

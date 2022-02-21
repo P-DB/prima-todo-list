@@ -1,0 +1,27 @@
+@import 'theme/theme';
+
+.item-counter {
+  align-items: center;
+  background-color: $textMain;
+  border-radius: 10px;
+  color: $textDark;
+  display: none;
+  justify-content: center;
+  padding: 2px $spacingXXS;
+  width: 30px;
+  height: 20px;
+
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+@include laptop {
+
+  .item-counter {
+    display: flex;
+  }
+
+}

@@ -1,0 +1,63 @@
+@import 'theme/theme';
+
+.task {
+  align-items: center;
+  background-color: $bgSidebar;
+  border-radius: $shapeL;
+  color: $textSidebar;
+  display: flex;
+  margin-bottom: $spacingS;
+  outline:0px solid transparent;
+  padding: $spacingM;
+  transition: outline .2s ease-out;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &__trash {
+    cursor: pointer;
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+  }
+
+  &__status {
+    background-color: $ctaDisalbed;
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 10px;
+    margin: 0 $spacingXS 0 $spacingS;
+    width: 10px;
+
+    &--high {
+      background-color: $bgWarning;
+    }
+  }
+
+  &__description {
+    color: $textDarker;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+
+    &--striked {
+      color:$ctaDisalbed;
+      text-decoration:line-through;
+    }
+  }
+
+}
+
+
+@include laptop {
+  .task {
+    &:hover {
+      outline:4px solid $bgSidebar;
+    }
+
+    &:hover &__trash {
+      opacity: 1;
+    }
+  }
+}
