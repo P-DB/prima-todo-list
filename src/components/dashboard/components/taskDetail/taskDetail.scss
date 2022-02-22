@@ -1,0 +1,53 @@
+@import 'theme/theme';
+
+.task-detail {
+
+  &__title {
+    align-items: center;
+    display: flex;
+  }
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__trash {
+    background-color: $bgSelectedItem;
+    border-radius: $shapeM;
+    @include flexCenter;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+  }
+
+  &__status {
+   @include statusBullet;
+   margin: 0 $spacingXS 0 0;
+  }
+
+  &__description {
+    @include fontStyle($textDarker, 18px, 500);
+    margin: 0 0 $spacingXXL 0;
+
+    &--striked {
+      color:$ctaDisalbed;
+      text-decoration:line-through;
+    }
+  }
+
+}
+
+
+@include laptop {
+  .task {
+    &:hover {
+      outline:4px solid $bgSidebar;
+    }
+
+    &:hover &__trash {
+      opacity: 1;
+    }
+  }
+}
