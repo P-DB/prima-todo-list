@@ -8,9 +8,8 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: $spacingS;
-  outline:0px solid transparent;
   padding: $spacingM;
-  transition: outline .2s ease-out;
+  position: relative;
 
   &:last-child {
     margin: 0;
@@ -19,11 +18,15 @@
   &__action { 
     align-items: center;
     display: flex;
+    position: relative;
+    z-index: 10;
   }
   &__content {
     align-items: center;
     display: flex;
     flex: 1;
+    position: relative;
+    z-index: 10;
   }
 
   &__trash {
@@ -53,8 +56,25 @@
 
 @include laptop {
   .task {
+    &:before {
+      content: '';
+      display: block;
+      border-radius: $shapeL;
+      background-color: transparent;
+      bottom: -5px;
+      left: -3px;
+      opacity: 1;
+      position: absolute;
+      right: -3px;
+      top: -5px;
+      transition: background-color .2s ease-out;
+      z-index: 1;
+    }
+    
     &:hover {
-      outline:4px solid $bgSidebar;
+     &:before {
+      background-color: $bgSidebar;
+     }
     }
 
     &:hover &__trash {

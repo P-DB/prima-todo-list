@@ -19,7 +19,7 @@ function Dashboard(props: DashboardProps) {
   const [todosInProgress, setTodosInProgress] = useState<TodoObj[]>([]);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
-  const tabletWidth: number = 820;
+  const tabletWidth: number = 900;
   const isMobile = () => windowWidth < tabletWidth;
 
   const detectWidth = () => {

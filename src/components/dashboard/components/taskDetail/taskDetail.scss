@@ -38,16 +38,3 @@
   }
 
 }
-
-
-@include laptop {
-  .task {
-    &:hover {
-      outline:4px solid $bgSidebar;
-    }
-
-    &:hover &__trash {
-      opacity: 1;
-    }
-  }
-}

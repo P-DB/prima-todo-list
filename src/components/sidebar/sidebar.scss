@@ -28,7 +28,7 @@
 
 @include laptop {
   .sidebar {
-    flex: 1;
+    flex: 1 0 auto;
     flex-direction: column;
     min-width: 250px;
     min-height: 0;
