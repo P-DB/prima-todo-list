@@ -16,6 +16,16 @@
     margin: 0;
   }
 
+  &__action { 
+    align-items: center;
+    display: flex;
+  }
+  &__content {
+    align-items: center;
+    display: flex;
+    flex: 1;
+  }
+
   &__trash {
     cursor: pointer;
     margin-left: auto;

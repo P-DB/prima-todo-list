@@ -18,7 +18,7 @@ function TaskDetail({ todo, onClick }: TaskDetailProps) {
 
   useEffect(() => {
     dispatch(updateTodos({ id, completed: done }));
-  }, [done]);
+  }, [done, dispatch, id]);
 
   let classList = "task-detail";
   classList += done ? ` task-detail--done` : "";

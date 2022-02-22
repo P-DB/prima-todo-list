@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './myCheckbox.scss';
 
 export interface MySwitchProps {
@@ -7,11 +7,10 @@ export interface MySwitchProps {
 }
 
 function MySwitch({ flagged, onClick }:MySwitchProps ) {
-  const [checked, setChecked] = useState<boolean>(flagged);
   return (
     <div 
         onClick={ () => onClick()}
-        className={`my-checkbox ${checked ? ' my-checkbox--checked' : ''}`}
+        className={`my-checkbox ${flagged ? ' my-checkbox--checked' : ''}`}
       />
   );
 }
