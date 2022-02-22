@@ -9,8 +9,7 @@
 
   h1 {
     display: none;
-    font-size: 24;
-    font-weight: 700;
+    @include fontStyle($textMain, 24px, 700);
     margin: 0 0 0 18px;
   }
 
@@ -31,7 +30,7 @@
   .sidebar {
     flex-grow: 1;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 250px;
     min-height: 0;
     order: 1;
     padding: 40px;

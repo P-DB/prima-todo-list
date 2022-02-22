@@ -1,12 +1,10 @@
 @import 'theme/theme';
 
 .my-button {
-  align-items: center;
+  @include flexCenter;
   background-color: $ctaActive;
   border-radius: $shapeM;
   border: 0;
-  display: flex;
-  justify-content: center;
   padding: 2px $spacingXXS;
   min-height: 40px;
   min-width: 90px;
@@ -31,10 +29,10 @@
   }
 
   &--success {
-    background-color: $bgSuccess;
+    background-color: $ctaSuccess;
 
     &:hover {
-      background-color: $bgSuccessActive;
+      background-color: $ctaSuccessHover;
       color: $textSuccessActive;
     } 
   }

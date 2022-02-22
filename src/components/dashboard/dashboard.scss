@@ -72,12 +72,10 @@
   }
 
   &__cta-new-task {
-    align-items: center;
+    @include flexCenter;
     background-color: $bgSidebar;
     border-radius: $shapeL;
     color: $textSidebar;
-    display: flex;
-    justify-content: center;
     margin-bottom: $spacingS;
     padding: $spacingM;
 

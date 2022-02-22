@@ -34,7 +34,7 @@
   }
 
   &--checked {
-    background-color: $bgSuccess;
+    background-color: $ctaSuccess;
 
     &:before {
       opacity: 1;
@@ -44,7 +44,7 @@
       &:before {
         opacity: 1;
       }
-      background-color: $bgSuccess;
+      background-color: $ctaSuccess;
     }
   }
   

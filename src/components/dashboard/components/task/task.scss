@@ -6,6 +6,7 @@
   border-radius: $shapeL;
   color: $textSidebar;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: $spacingS;
   outline:0px solid transparent;
   padding: $spacingM;
@@ -28,9 +29,7 @@
   }
 
   &__description {
-    color: $textDarker;
-    font-size: 16px;
-    font-weight: 500;
+    @include fontStyle($textDarker, 16px, 500);
     margin: 0;
 
     &--striked {
