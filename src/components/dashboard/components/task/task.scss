@@ -23,16 +23,8 @@
   }
 
   &__status {
-    background-color: $ctaDisalbed;
-    border-radius: 50%;
-    flex-shrink: 0;
-    height: 10px;
+    @include statusBullet;
     margin: 0 $spacingXS 0 $spacingS;
-    width: 10px;
-
-    &--high {
-      background-color: $bgWarning;
-    }
   }
 
   &__description {

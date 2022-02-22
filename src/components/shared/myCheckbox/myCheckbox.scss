@@ -8,6 +8,7 @@
   flex-shrink: 0;
   justify-content: center;
   height: 20px;
+  pointer-events: none;
   width: 20px;
   transition: background-color .2s ease-out;
 
@@ -47,4 +48,10 @@
     }
   }
   
+}
+
+@include laptop {
+  .my-checkbox {
+    pointer-events: initial;
+  }
 }

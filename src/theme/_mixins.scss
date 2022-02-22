@@ -44,3 +44,15 @@
     display: flex;
     justify-content: center;
   }
+
+  @mixin statusBullet {
+    background-color: $ctaDisalbed;
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 10px;
+    width: 10px;
+
+    &--high {
+      background-color: $bgWarning;
+    }
+  }

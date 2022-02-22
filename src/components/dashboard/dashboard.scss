@@ -2,20 +2,30 @@
 
 .modal {
   border-radius: $shapeL;
-  background-color: $bgSidebar;
+  background-color: $bgModal;
   margin: 100px 35px 0 35px;
+
+  &--detail {
+    margin: 0 35px;
+  }
 
   &:focus-visible {
     outline: 0;
   }
 
   &__overlay {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 68px;
     background-color: $bgModalOverlay;
+
+    &--detail {
+      justify-content: center;
+    }
   }
 
   &__title {
@@ -61,7 +71,7 @@
     width: 100%;
   }
 
-  &__CTANewTask {
+  &__cta-new-task {
     align-items: center;
     background-color: $bgSidebar;
     border-radius: $shapeL;
@@ -117,7 +127,7 @@
       display: none;
     }
 
-    &__CTANewTask {
+    &__cta-new-task {
       display: none;
     }
 

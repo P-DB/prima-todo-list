@@ -4,6 +4,7 @@
   display: flex;
   background-color: $bgSidebar;
   overflow: hidden;
+  min-height: 68px;
   
 
   h1 {
@@ -31,6 +32,7 @@
     flex-grow: 1;
     flex-direction: column;
     max-width: 300px;
+    min-height: 0;
     order: 1;
     padding: 40px;
 

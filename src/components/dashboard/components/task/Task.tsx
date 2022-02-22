@@ -7,10 +7,11 @@ import { useDispatch } from "react-redux";
 import { updateTodos, removeTodos } from "store/todos/todosSlice";
 
 export interface TaskProps {
-  todo: TodoObj;
+  todo: TodoObj,
+  onDescriptionClick?: (todo:TodoObj) => void
 }
 
-function Task({ todo }: TaskProps) {
+function Task({ todo, onDescriptionClick }: TaskProps) {
   const { id, description, completed, highPriority } = todo;
   const [done, setDone] = useState<boolean>(completed);
   const dispatch = useDispatch();
@@ -20,19 +21,19 @@ function Task({ todo }: TaskProps) {
 
   useEffect(() => {
     dispatch(updateTodos({ id, completed: done }));
-  }, [done])
+  }, [done]);
 
   return (
-    <div className={classList}>
-      <MyCheckbox flagged={done} onClick={() => setDone((prevState) => !prevState)} />
-      <div className={`task__status ${highPriority ? " task__status--high" : ""}`} />
-      <p className={`task__description ${done ? " task__description--striked" : ""}`}>
-        {description}
-      </p>
-      <div onClick={() => dispatch(removeTodos(id))} className="task__trash">
-        <IconTrash />
+      <div className={classList} onClick={() => onDescriptionClick && onDescriptionClick(todo)}>
+        <MyCheckbox flagged={done} onClick={() => setDone((prevState) => !prevState)} />
+        <div className={`task__status ${highPriority ? " task__status--high" : ""}`} />
+        <p className={`task__description ${done ? " task__description--striked" : ""}`}>
+          {description}
+        </p>
+        <div onClick={() => dispatch(removeTodos(id))} className="task__trash">
+          <IconTrash />
+        </div>
       </div>
-    </div>
   );
 }
 
